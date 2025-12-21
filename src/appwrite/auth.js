@@ -19,7 +19,7 @@ export class AuthService {
             ID.unique(), email, password, name
             )
             if (userAccount) {
-                return this.login(email, password)
+                return await this.login({email, password})
             } else {
                 return userAccount
             }
@@ -42,7 +42,9 @@ export class AuthService {
         try {
             return await this.account.get()
         } catch (error) {
-            throw error
+            if (error.code === 401) return null;
+            console.error(error);
+            return null
         }
     }
 

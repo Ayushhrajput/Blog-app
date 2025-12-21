@@ -33,24 +33,38 @@ function Header(props) {
     ]
 
     return (
-        <header className='py-2 shadow bg-white'>
-            <Container>
-                <div>
-                    <div>
+        <header className='py-2 shadow w-full bg-white'>
+            <Container className=''>
+                <div className='flex'>
+                    <div className='mx-4 flex items-center'>
                         <Link>
                             <Logo />
                         </Link>
                     </div>
-                    <div>
+                    <div className='flex w-full justify-end   items-center mx-auto'>
                         {navItems.map((item) => (
                             item.active? 
-                            <li key={item.name} className='list-none'>
+                            <li key={item.name} className='list-none flex mx-4 w-max hidden md:inline'>
                                 <button
-                                    onClick={navigate(item.path)}
-                                    className='ml-auto '
+                                    onClick={() => navigate(item.path)}
+                                    className='mr-4'
                                 >{item.name}</button> 
                             </li>: null    
-                        ))} {
+                        ))}
+                        <div className='relative'>
+                            <button className=' border-b-2 focus:border-0 mx-4 peer md:hidden'>More</button>
+                            <div className='flex flex-col items-center bg-black/10 rounded-sm absolute top-14 right-2 p-4 opacity-0 peer-focus:opacity-100'>{navItems.map((item) => (
+                                item.active? 
+                                <li key={item.name} className='list-none flex ml-4 w-max'>
+                                    <button
+                                        onClick={() => navigate(item.path)}
+                                        className='mr-4'
+                                    >{item.name}</button> 
+                                </li>: null    
+                            ))}
+                            </div>
+                        </div>
+                         {
                             authStatus && (
                                 <LogoutBtn />
                             )

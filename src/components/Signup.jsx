@@ -7,7 +7,7 @@ import authService from '../appwrite/auth'
 import { useForm } from 'react-hook-form'
 
 
-function Signup(props) {
+ export function SignupPage(props) {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
@@ -31,7 +31,7 @@ function Signup(props) {
     }
 
     return (
-            <div className='max-w-sm py-4 mx-auto px-4 rounded-xl m-4 bg-white'>
+            <div className='max-w-sm py-4 mx-auto px-4 rounded-xl mx-4 bg-white'>
                     <div className='flex '>
                         <span>
                             <Logo />
@@ -47,19 +47,19 @@ function Signup(props) {
                     action=""
                     className='mt-4'
                     >   <Input 
-                        label='name'
+                        label='Name'
                         type='text'
                         placeholder='fullname'
-                        className='mb-4 p-2 border border-gray-200'
+                        className='mb-4 p-2 '
                         {...register('name',{
                             required: true
                         })}
                         />
                         <Input
-                        label="email"
+                        label="Email"
                         type='email'
                         placeholder='email'
-                        className='mb-4 p-2 border border-gray-200'
+                        className='mb-4 p-2 '
                         {...register('email',{
                             required: true,
                             validate: {
@@ -72,15 +72,15 @@ function Signup(props) {
                          />
                         
                         <Input
-                        label="password"
+                        label="Password"
                         type='password'
                         placeholder='password'
-                        className= 'w-full mb-4 p-2 border border-gray-200'
+                        className= 'w-full mb-4 p-2 '
                         {...register('password',{
                             required: true,
                         })}
                          />
-                        <Button type='submit' className='w-full bg-blue-400 cursor-pointer p-2'>Create Account</Button>
+                        <Button type='submit' className='w-full cursor-pointer p-2'>Create Account</Button>
         
                     </form>
         
@@ -88,5 +88,3 @@ function Signup(props) {
             </div>
     )
 }
-
-export default Signup;

@@ -9,8 +9,8 @@ export class Service {
     constructor() {
         this.client
             .setProject(config.appwriteId).setEndpoint(config.appwriteUrl)
-        this.databases = new Databases()
-        this.storage = new Storage()
+        this.databases = new Databases(this.client)
+        this.storage = new Storage(this.client)
     }
 
     async createPost({title, content, featuredImgs, status, userId}){
@@ -18,7 +18,7 @@ export class Service {
             return await this.databases.createDocument(
                 config.appwriteDatabase,
                 config.appwriteCollection,
-                ID.unique, 
+                ID.unique(), 
                 {
                     title,
                     content,
@@ -37,7 +37,7 @@ export class Service {
             return await this.databases.updateDocument(
                 config.appwriteDatabase,
                 config.appwriteCollection,
-                ID.unique(),
+                userID,
                 {
                     title,
                     content,
@@ -49,12 +49,12 @@ export class Service {
             throw error
         }
     }
-    async deletePost({}){
+    async deletePost(id){
         try {
             await this.databases.deleteDocument(
                 config.appwriteDatabase,
                 config.appwriteCollection,
-                ID.unique()
+                id
             )
             return true
         } catch (error) {
@@ -64,18 +64,18 @@ export class Service {
         }
     }
 
-    async getPost({}){
+    async getPost(id){
         try {
             return await this.databases.getDocument(
                 config.appwriteDatabase,
                 config.appwriteCollection,
-                ID.unique()
+                id
             )
         } catch (error) {
             console.log(error)
         }
     }
-    async getPosts(queries = [Query.equal('ststus','active')]){
+    async getPosts(queries = [Query.equal('status','active')]){
         try {
             return await this.databases.listDocuments(
                 config.appwriteDatabase,
@@ -83,7 +83,7 @@ export class Service {
                 queries
             )
         } catch (error) {
-            console.log(error)
+            console.log("error fetching posts",error)
         }
     }
     async uploadFile(file){

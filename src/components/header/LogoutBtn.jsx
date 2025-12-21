@@ -12,9 +12,14 @@ function LogoutBtn(props) {
         })
     }
 
-    return <button
-            className='inline px-4 py-2 duration-100 hover:bg-blue-400 rounded-lg'
-           >Logout</button>
+    return <div className='flex flex-col'>
+            <button
+                onClick={logoutHandler}
+                className='inline peer'
+            >Logout</button>
+            <div className='w-0 bg-black h-[2px] peer-hover:w-full duration-100'></div>
+           </div>
+            
 }
 
 export default LogoutBtn;

@@ -4,10 +4,7 @@ import authService from './appwrite/auth'
 import { useDispatch } from 'react-redux'
 import {Outlet} from 'react-router-dom'
 import { login, logout } from './features/authSlice'
-import { Footer, Header } from './components'
-import Login from './components/Login'
-import Signup from './components/Signup'
-import Rte from './components/Rte'
+import { Footer, Header, PostForm } from './components/index.js'
 
 function App() {
   
@@ -21,18 +18,16 @@ function App() {
           dispatch(login({userData}))
         } else {
           dispatch(logout())
-        }
+        } 
       })
       .finally(() => (setLoading(false)))
   }, [])
 
   return !loading? (
-    <div className='min-h-screen flex flex-wrap content-between'>
-      <div className='w-full block'>
+    <div className=' flex flex-wrap content-between'>
+      <div className='w-full '>
         <Header/>
-        <Login/>
-        <Rte/>
-        <main>
+        <main className='h-screen'>
           <Outlet/>
         </main>
         <Footer/>

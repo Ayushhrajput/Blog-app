@@ -7,7 +7,7 @@ import authService from '../appwrite/auth'
 import {useForm} from 'react-hook-form'
 
 
-function Login(props) {
+export function Login(props) {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const {register, handleSubmit} = useForm()
@@ -30,7 +30,7 @@ function Login(props) {
         }
     }
     return (
-        <div className='max-w-sm py-4 mx-auto px-4 rounded-xl m-4 bg-white'>
+        <div className='max-w-sm py-4 mx-auto px-4 rounded-xl mx-4 bg-white'>
             <div className='flex '>
                 <span>
                     <Logo />
@@ -47,10 +47,10 @@ function Login(props) {
             className='mt-4'
             >
                 <Input
-                label="email"
+                label="Email"
                 type='email'
                 placeholder='email'
-                className='mb-4 p-2 border border-gray-200'
+                className='mb-4 p-2 '
                 {...register('email',{
                     required: true,
                     validate: {
@@ -63,15 +63,15 @@ function Login(props) {
                  />
                 
                 <Input
-                label="password"
+                label="Password"
                 type='password'
                 placeholder='password'
-                className= 'w-full mb-4 p-2 border border-gray-200'
+                className= 'w-full mb-4 p-2 '
                 {...register('password',{
                     required: true,
                 })}
                  />
-                <Button type='submit' className='w-full bg-blue-400 cursor-pointer p-2'>Sign In</Button>
+                <Button type='submit' className='w-full cursor-pointer p-2'>Sign In</Button>
 
             </form>
 
@@ -79,5 +79,3 @@ function Login(props) {
         </div>
     );
 }
-
-export default Login;
