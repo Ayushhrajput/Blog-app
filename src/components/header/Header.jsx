@@ -33,18 +33,18 @@ function Header(props) {
     ]
 
     return (
-        <header className='py-2 shadow w-full bg-white'>
+        <header className='py-2 shadow w-full'>
             <Container className=''>
-                <div className='flex'>
+                <div className='flex gap-25 '>
                     <div className='mx-4 flex items-center'>
                         <Link>
                             <Logo />
                         </Link>
                     </div>
-                    <div className='flex w-full justify-end   items-center mx-auto'>
+                    <div className='flex justify-end   items-center bg-black/90 backdrop-blur-lg border border-black/40 text-white p-4 rounded-2xl mx-auto'>
                         {navItems.map((item) => (
                             item.active? 
-                            <li key={item.name} className='list-none flex mx-4 w-max hidden md:inline'>
+                            <li key={item.name} className='list-none flex mx-4  hidden md:inline'>
                                 <button
                                     onClick={() => navigate(item.path)}
                                     className='mr-4'
@@ -53,7 +53,7 @@ function Header(props) {
                         ))}
                         <div className='relative'>
                             <button className=' border-b-2 focus:border-0 mx-4 peer md:hidden'>More</button>
-                            <div className='flex flex-col items-center bg-black/10 rounded-sm absolute top-14 right-2 p-4 opacity-0 peer-focus:opacity-100'>{navItems.map((item) => (
+                            <div className='flex  items-center bg-black/90 backdrop-blur-lg border border-black/40 shadow-lg shadow-black text-white rounded-2xl absolute top-14 right-2 p-4 opacity-0 peer-focus:opacity-100 duration-400 '>{navItems.map((item) => (
                                 item.active? 
                                 <li key={item.name} className='list-none flex ml-4 w-max'>
                                     <button
