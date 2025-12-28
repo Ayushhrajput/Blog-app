@@ -53,7 +53,7 @@ function Header(props) {
                         ))}
                         <div className='relative'>
                             <button className=' border-b-2 focus:border-0 mx-4 peer md:hidden'>More</button>
-                            <div className='flex  items-center bg-black/90 backdrop-blur-lg border border-black/40 shadow-lg shadow-black text-white rounded-2xl absolute top-14 right-2 p-4 opacity-0 peer-focus:opacity-100 duration-400 '>{navItems.map((item) => (
+                            <div className='flex  items-center bg-black/90 backdrop-blur-lg border border-black/40 shadow-lg shadow-black text-white rounded-2xl absolute top-14 -right-15 p-4 opacity-0 peer-focus:opacity-100 duration-400 '>{navItems.map((item) => (
                                 item.active? 
                                 <li key={item.name} className='list-none flex ml-4 w-max'>
                                     <button

@@ -30,7 +30,7 @@ export function Login(props) {
         }
     }
     return (
-        <div className='max-w-sm py-4 mx-auto px-4 rounded-xl mx-4 bg-black/90 text-white'>
+        <div className='max-w-sm w-max py-4 mx-auto px-4 rounded-xl mx-4 bg-black/90 text-white'>
             <div className='flex '>
                 <span>
                     <Logo />
