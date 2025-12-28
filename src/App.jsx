@@ -27,7 +27,7 @@ function App() {
     <div className=' flex flex-wrap content-between bg-white'>
       <div className='w-full '>
         <Header/>
-        <main className='h-screen bg-black/10 px-0'>
+        <main className='h-screen px-0'>
           <Outlet/>
         </main>
         <Footer/>

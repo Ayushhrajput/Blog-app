@@ -31,14 +31,14 @@ import { useForm } from 'react-hook-form'
     }
 
     return (
-            <div className='max-w-sm py-4 mx-auto px-4 rounded-xl mx-4 bg-white'>
+            <div className='max-w-sm py-4 mx-auto px-4 rounded-xl mx-4 bg-black/90 text-white'>
                     <div className='flex '>
                         <span>
                             <Logo />
                         </span>
                     </div>
                     <p className=' backdrop-blur-2xl text-xl w-max  '>sign up</p>
-                    <p className='text-gray-600'>Already have an account!
+                    <p className='text-gray-100'>Already have an account!
                         <Link to='/login' className='pl-4 italic underline'>Sign In</Link>
                     </p>
                     {error && <p className=''>{error}</p>}
@@ -80,7 +80,7 @@ import { useForm } from 'react-hook-form'
                             required: true,
                         })}
                          />
-                        <Button type='submit' className='w-full cursor-pointer p-2'>Create Account</Button>
+                        <Button type='submit' className='w-full cursor-pointer p-2 border border-black/90'>Create Account</Button>
         
                     </form>
         

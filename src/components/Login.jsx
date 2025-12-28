@@ -30,14 +30,14 @@ export function Login(props) {
         }
     }
     return (
-        <div className='max-w-sm py-4 mx-auto px-4 rounded-xl mx-4 bg-white'>
+        <div className='max-w-sm py-4 mx-auto px-4 rounded-xl mx-4 bg-black/90 text-white'>
             <div className='flex '>
                 <span>
                     <Logo />
                 </span>
             </div>
             <p className=' backdrop-blur-2xl text-xl w-max  '>sign in</p>
-            <p className='text-gray-600'>Don't have an account!
+            <p className='text-gray-100'>Don't have an account!
                 <Link to='/signup' className='pl-4 italic underline'>Sign up</Link>
             </p>
             {error && <p className=''>{error}</p>}
@@ -71,7 +71,7 @@ export function Login(props) {
                     required: true,
                 })}
                  />
-                <Button type='submit' className='w-full cursor-pointer p-2'>Sign In</Button>
+                <Button type='submit' className='w-full cursor-pointer p-2 border border-black/90'>Sign In</Button>
 
             </form>
 

@@ -35,13 +35,13 @@ function Header(props) {
     return (
         <header className='py-2 shadow w-full'>
             <Container className=''>
-                <div className='flex gap-25 '>
+                <div className='flex gap-10 '>
                     <div className='mx-4 flex items-center'>
                         <Link>
                             <Logo />
                         </Link>
                     </div>
-                    <div className='flex justify-end   items-center bg-black/90 backdrop-blur-lg border border-black/40 text-white p-4 rounded-2xl mx-auto'>
+                    <div className='flex justify-end   items-center bg-black/90 backdrop-blur-lg border border-black/40 text-white py-2 px-4 rounded-2xl mx-auto'>
                         {navItems.map((item) => (
                             item.active? 
                             <li key={item.name} className='list-none flex mx-4  hidden md:inline'>
