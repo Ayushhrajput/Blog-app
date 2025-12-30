@@ -8,7 +8,7 @@ function Footer(props) {
                 <div className=' px-4 w-1/4'>
                     <Logo className={`sm:text-4xl sm:px-20`}/>
                 </div>
-                <div className='w-max m-4 flex items-center justify-center text-lg md:text-2xl bg-black/90 backdrop-blur-lg border border-black/40 text-white p-4 rounded-2xl'>
+                <div className='w-max m-4 flex items-center justify-center text-lg md:text-2xl   border rounded-2xl'>
                     <h1>Internet chaos, neatly organized.</h1>
                 </div>
             </div>
